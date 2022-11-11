@@ -1,0 +1,498 @@
+body {
+    font-family: monospace;
+ } 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+
+.h2{
+    color:white;
+}
+nav {
+    background-color: rgb(189, 24, 65);
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;   
+}
+nav ul {
+    float: left;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+ li a:hover {
+    background: #000000;
+    transition: .5s;
+         color:white;
+
+}
+.active{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+.active:hover{
+    background-color: rgb(189, 24, 65);
+     color:white;
+ }
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    @media (max-width: 858px) {
+        .checkbtn {
+            display: block;
+        }
+
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+            /* تأثير الإنتقال */
+        }
+
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        a:hover, a.active {
+            background: none;
+            color:white;
+        }
+
+        #check:checked~ul {
+            left: 0; 
+        }
+    }
+}
+
+#banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #e93535), url(img/it.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.banner-text {
+    text-align: center;
+    color: #fff;
+    padding-top: 180px;
+}
+
+.banner-text h1 {
+    font-size: 130px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.banner-text p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.banner-btn {
+    margin: 70px auto 0;
+}
+
+.banner-btn a {
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #fff;
+    border: .5px solid #fff;
+    position: relative;
+    z-index: 1;
+    transition: color .5s;
+}
+.banner-btn a span {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: .5s;
+    /* تأثير الإنتقال */
+}
+
+.banner-btn a:hover span {
+    width: 100%;
+}
+
+.banner-btn a:hover {
+    color: #000;
+}
+
+@media screen and (max-width:770px) {
+    .banner-text h1 {
+        font-size: 44px;
+    }
+
+    .banner-btn a {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+/* feature */
+#feature {
+    width: 100%;
+    padding: 70px 0;
+    margin: 50px;
+}
+
+.title-text {
+    text-align: center;
+    padding-bottom: 70px;
+}
+ 
+.title-text p {
+    margin: 30px;
+    font-size: 20px;
+}
+.title-text h1 {
+    font-size: 50px;
+}
+.feature-box {
+    width: 80%; 
+     margin: auto;
+    display: flex;
+    /* صف هذه العناصر في سطر واحد بدون تحديد عرض كل واحد منها */
+    flex-wrap: wrap;
+    /* نزول الى الأسفل عند الضرورة */
+    align-items: center;
+    text-align: center;
+}
+.features {
+    flex-basis: 50%;
+ }
+.features-img {
+    flex-basis: 50%;
+     margin: auto;
+}
+.features-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+.features h1 {
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: rgb(189, 24, 65);
+}
+.features-desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.feature-icon .fa {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+}
+.feature-text p {
+    padding: 0 20px;
+     font-size:20px;
+
+}
+
+@media screen and (max-width:770px) {  
+         /* تُحدد القياس الرئيسي لعناصر الفليكس */
+
+    .title-text h1 {
+        font-size: 35px;
+    }
+
+    .features {
+        flex-basis: 100%;
+     }
+
+    .features-img {
+        flex-basis: 100%;
+    }
+
+    .features-img img {
+        width: 70%;
+    }
+}
+/* Service */
+.Service {
+    width: 100%;
+    padding: 70px 0;
+    background: #efefef;
+}
+
+.service-box {
+    width: 80%;
+    display: flex;
+     flex-wrap: wrap;
+    /* نزول الى الأسفل عند الضرورة */
+    justify-content: space-around;
+    /* توزيع المسافات بين المحتوى */
+    margin: auto;
+}
+
+.single-service {
+    flex-basis: 48%;
+     text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+.single-service {
+    width: 100%;
+    border-radius: 7px;   
+}
+.single-service:hover {
+    opacity: 1;
+ }
+.service-desc {   
+    /* تحريك العنصر يمين أو يسار */ 
+    width: 80%;
+    position:absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+      /* تأثير الإنتقال */
+    opacity: 0;
+    transition: 1s;
+}
+hr {
+    background-color: #fff;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+.single-service:hover .service-desc {
+    bottom: 40%;
+    opacity: 1;
+}
+@media screen and (max-width:770px) {
+    .single-service {
+        flex-basis: 100%;
+        /* تحدد القياس الرئيسي لعناصر الفليكس */
+        margin-bottom: 30px;
+    }
+
+    .service-desc p {
+        font-size: 12px;
+    }
+
+    hr {
+        margin: 5px auto;
+    }
+
+    .single-service:hover .service-desc {
+        bottom: 25% !important;
+        
+        /* تجعل الخاصية المكتوبة عندها تنفذ بغض النظر عن أي اعتبارات أُخرى */
+        /* وضع !important  يغير في نظام الأولوية الخاص بالـCSS  */
+    }
+}
+/* Testimonial */
+
+#testimonial {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.testimonial-row {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    /* صف هذه العناصر في سطر واحد بدون تحديد عرض كل واحد منها */
+    justify-content: space-between;
+     align-items: flex-start;
+     flex-wrap: wrap;    /* نزول العنصر الى الأسفل عند الضرورة */
+}
+.testimonial-col {    
+   /* تُحدد القياس الرئيسي لعناصر الفليكس */
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #00968814;
+    cursor: pointer;
+    transition: transform .5s;
+}
+testimonial-col p {
+    font-size: 14px;
+}
+.user {
+    display: flex;
+    /* صف هذه العناصر في سطر واحد بدون تحديد عرض كل واحد منها */
+    align-items: center;
+    margin: 20px 0;
+}
+.user img {
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+.user-info .fab {
+    margin-left: 10px;
+    color: #27c0ff;
+    font-size: 20px;
+}
+.user-info small {
+    color: #009688;
+}
+.testimonial-col:hover {
+    transform: translateY(-7px);
+    /* تحريك العنصر للأعلى والأسفل */
+}
+@media screen and (max-width:770px) {  
+         /* تُحدد القياس الرئيسي لعناصر الفليكس */
+
+    .testimonial-col {
+        flex-basis: 100%;
+    }
+}
+/* Footer */
+#footer {
+    padding: 100px 0 20px;
+    background-color: rgba(0, 0, 0, 0.226);
+    position: relative;
+}
+.footer-row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    /* صف هذه العناصر في سطر واحد بدون تحديد عرض كل واحد منها */
+    justify-content: space-between;
+    flex-wrap: wrap;
+ }
+
+.footer-left, .footer-right {
+    flex-basis: 45%;
+     padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-row h1 {
+    margin: 10px 0;
+}
+
+.footer-row p {
+    line-height: 35px;
+}
+
+.footer-left .fa, .footer-right .fa {
+    font-size: 20px;
+    color: red;
+    margin: 10px;
+}
+.social-links {
+    text-align: center;
+    margin: 30px;
+}
+.social-links .fab {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: red 1px solid;
+    margin: 40px 5px 0;
+    color: red;
+    cursor: pointer;
+    transition: .5s;
+    /* تأثير الإنتقال */
+}
+.social-links .fab:hover {
+    background-color: red;
+    color: #fff;
+    transform: translateY(-7px);    /* تحريك من الأعلى والأسفل */
+}
+.social-links p {
+    font-size:20px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.226);
+}
+@media screen and (max-width:770px) {
+    .footer-left .fa, .footer-right {
+        flex-basis: 100%;
+         font-size: 14px;
+    }
+}h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
